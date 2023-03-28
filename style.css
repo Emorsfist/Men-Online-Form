@@ -1,0 +1,109 @@
+body{
+    margin: auto;
+    width: 900px;
+    background-color: powderblue;
+    padding-bottom: 50px;
+}
+
+#header {
+    text-align: center;
+}
+
+#search {
+    display: flex;
+    padding-left: 130px;
+    padding-right: 0px;
+    justify-content: space-between;
+    text-align: center;
+    background-color: powderblue;
+    box-shadow: rgba(0, 0, 0, 0.90) 0.2px 0px 15px 2px;
+}
+
+#search h4{
+    margin: 0;
+    padding-left: 60px;
+    padding-top: 20px;
+    padding-right: 0px;
+}
+
+#search input {
+    width: 30%;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 0;
+    text-align: center;
+    border-radius: 8px;
+}
+
+#search button{
+    width: 15%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-right: 50px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+#search button:hover {
+    background-color: #022b04;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+#enter-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2px;
+    background-color: powderblue;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+    padding: 0px;
+}
+
+h4{
+    margin: 0;
+    margin-top: 20px;
+}
+
+input {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 0px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+#submit {
+    text-align: center;
+}
+
+#submit button{
+    width: 30%;
+    background-color: #022b04;
+    color: white;
+    padding: 10px;
+    margin-left: 85%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    text-align: center;
+}
+
+#submit button:hover {
+    background-color: #4CAF50;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+}

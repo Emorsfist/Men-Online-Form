@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>RMF FCT 3 BIO-DATA FORM</title>
+    <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/9/9b/Rccg_logo.png">
+
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAPMfdFxP9zupBPs_34dNaSouuV0eE1TNc",
+  authDomain: "rmf-fct-3-bio-data-form-7c328.firebaseapp.com",
+  databaseURL: "https://rmf-fct-3-bio-data-form-7c328-default-rtdb.firebaseio.com",
+  projectId: "rmf-fct-3-bio-data-form-7c328",
+  storageBucket: "rmf-fct-3-bio-data-form-7c328.appspot.com",
+  messagingSenderId: "491357059748",
+  appId: "1:491357059748:web:1bb08c00f6cf2c70bb0431"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+import {getDatabase, set, get, update, remove, ref, child}
+from "https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js"
+
+const db = getDatabase();
+
+var full_name = document.querySelector("#full_name");
+var profession = document.querySelector("#profession");
+var phone = document.querySelector("#phone");
+var emailid = document.querySelector("#emailid");
+var parish = document.querySelector("#parish");
+var dateOfBirth = document.querySelector("#dateOfBirth");
+var findID = document.querySelector("#findID");
+var searchFullName = document.querySelector("#searchFullName");
+var searchProfession = document.querySelector("#searchProfession");
+var searchPhoneNumber = document.querySelector("#searchPhoneNumber");
+var searchEmailId = document.querySelector("#searchEmailId");
+var searchParish = document.querySelector("#searchParish");
+
+var findBtn = document.querySelector("#find");
+var submitBtn = document.querySelector("#submit");
+
+function SubmitData() {
+    set(ref(db, "People/" + profession.value), {
+        FullName: full_name.value,
+        Profession: profession.value,
+        PhoneNumber: phone.value,
+        EmailId: emailid.value,
+        Parish: parish.value,
+        DateOfBirth: dateOfBirth.value,
+    })
+    .then(()=>{
+        alert("Data added successfully!")
+    })
+    .catch((error)=>{
+        alert(error)
+    });
+}
+
+function FindData() {
+    const dbref = ref(db);
+
+    get(child(dbref, "People/" + findID.value))
+    .then((snapshot)=>{
+        if (snapshot.exists()) {
+            findFullName.innerHTML = "Full Name: " + snapshot.val().FullName;
+            findProfession.innerHTML = "Profession: " + snapshot.val().Profession;
+            findPhoneNumber.innerHTML = "Phone Number: " + snapshot.val().PhoneNumber;
+            findEmailId.innerHTML = "Email Id: " + snapshot.val().EmailId;
+            findParish.innerHTML = "Parish: " + snapshot.val().Parish;
+        }
+        else {
+            alert("No data found")
+        }
+    })
+    .catch((error)=>{
+        alert(error)
+    });
+}
+
+findBtn.addEventListener('click', FindData);
+submitBtn.addEventListener('click', SubmitData);
+        
+      </script>
+
+</head>
+<body>
+        <div id="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Rccg_logo.png" alt="RCCG Logo" style="width:100px;">
+            <h2>RMF FCT 3 BIO-DATA FORM</h2>
+        </div>
+        
+        <hr>
+        
+        <div id="search">
+            <h4>Search for:</h4>
+            <input id="findID" type="text">
+            <button id="find">Search</button>
+            
+            <h3 id="findFullName" type="text"></h3>
+            <h3 id="findProfession" type="text"></h3>
+            <h3 id="findPhoneNumber" type="tel"></h3>
+            <h3 id="findEmailId" type="text"></h3>
+            <h3 id="findParish" type="text"></h3>
+        </div>
+        
+        <hr>
+        
+        <div id="enter-details">
+            
+            <div>
+                <h4>Full Name</h4>
+                <input id="full_name" type="text" placeholder="Enter your full name" required>
+            </div>
+            
+            <div>
+                <h4>Profession</h4>
+                <input id="profession" type="text" placeholder="What do you do for a living?" required>
+            </div>
+            
+            <div>
+                <h4>Phone Number</h4>
+                <input id="phone" type="tel" placeholder="Enter your phone number" required>
+            </div>
+            
+            <div>
+                <h4>Email Id.</h4>
+                <input id="emailid" type="text" placeholder="Enter valid email Id" required>
+            </div>
+            
+            <div>
+                <h4>Parish</h4>
+                <input id="parish" type="tel" placeholder="Which RCCG parish under FCT 3 do you attend?" required>
+            </div>
+            
+            <div>
+                <h4>Date Of Birth</h4>
+                <input id="dateOfBirth" type="date" placeholder="dateOfBirth">
+            </div>
+            
+            <div id="submit">
+                <button id="submit" type="submit">Submit</button>
+            </div>
+        </div>
+    </body>
+</html>
