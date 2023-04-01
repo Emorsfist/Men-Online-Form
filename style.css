@@ -9,43 +9,51 @@ body{
     text-align: center;
 }
 
-#search {
+#wrapper {
     display: flex;
-    padding-left: 130px;
+    padding-left: 60px;
     padding-right: 0px;
+    padding-bottom: 8px;
     justify-content: space-between;
     text-align: center;
     background-color: powderblue;
     box-shadow: rgba(0, 0, 0, 0.90) 0.2px 0px 15px 2px;
 }
 
+#search{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 #search h4{
-    margin: 0;
-    padding-left: 60px;
+    margin: 0px;
+    padding-left: 158px;
     padding-top: 20px;
-    padding-right: 0px;
+    font-size: 15px;
 }
 
 #search input {
-    width: 30%;
+    margin: 0;
+    width: 120%;
     height: 40px;
-    margin-top: 10px;
-    margin-left: 0;
+    margin-top: 8px;
     text-align: center;
     border-radius: 8px;
 }
 
 #search button{
-    width: 15%;
+    width: 30%;
+    height: 78%;
     background-color: #4CAF50;
     color: white;
     padding: 10px;
-    margin-right: 50px;
-    margin: 8px 0;
+    margin-top: 9px;
+    margin-left: 49px;
+    text-align: center;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }

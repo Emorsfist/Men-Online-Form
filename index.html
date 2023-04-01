@@ -90,8 +90,8 @@ function FindData() {
 
 findBtn.addEventListener('click', FindData);
 submitBtn.addEventListener('click', SubmitData);
-        
-      </script>
+
+</script>
 
 </head>
 <body>
@@ -102,16 +102,24 @@ submitBtn.addEventListener('click', SubmitData);
         
         <hr>
         
-        <div id="search">
+        <div id="wrapper">
+            <div id="search">
             <h4>Search for:</h4>
             <input id="findID" type="text">
             <button id="find">Search</button>
-            
-            <h3 id="findFullName" type="text"></h3>
-            <h3 id="findProfession" type="text"></h3>
-            <h3 id="findPhoneNumber" type="tel"></h3>
-            <h3 id="findEmailId" type="text"></h3>
-            <h3 id="findParish" type="text"></h3>
+        </div>
+            <br>
+            <br>
+
+            <div id="search-result">
+                <hr>
+                <h3 id="findFullName" type="text"></h3>
+                <h3 id="findProfession" type="text"></h3>
+                <h3 id="findPhoneNumber" type="tel"></h3>
+                <h3 id="findEmailId" type="text"></h3>
+                <h3 id="findParish" type="text"></h3>
+                <hr>
+            </div>
         </div>
         
         <hr>
